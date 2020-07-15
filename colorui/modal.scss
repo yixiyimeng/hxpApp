@@ -1,0 +1,146 @@
+.cu-modal {
+		.cu-dialog {
+			width: 600upx;
+			text-align: left;
+			position: relative;
+		}
+
+		.title {
+			color: #000;
+			font-size: 28upx;
+			font-weight: blod;
+		}
+
+		.cuIcon-close {
+			font-size: 40upx;
+			color: #303030;
+		}
+
+		.cu-modal-ft {
+			color: #fff;
+			text-align: center;
+			font-size: 24upx;
+			line-height: 70upx;
+			background: #ff6202;
+		}
+
+		.replylist {
+			max-height: 300px;
+			overflow: auto;
+		}
+
+		.close {
+			position: absolute;
+			right: 56upx;
+			top: 30upx;
+			z-index: 1;
+		}
+	}
+
+	.mail-item {
+		text-align: left;
+		font-size: 24upx;
+		color: #9F9F9F;
+		padding: 40upx 50upx;
+		position: relative;
+
+
+		.imgbox {
+			width: 200upx;
+			height:200upx;
+			background: #fff;
+			overflow:hidden;
+			border: 1px solid #E8E8E8;
+			border-radius: 10upx;
+			margin-right: 50upx;
+
+			image {
+				width: 100%;
+			}
+		}
+
+		.name {
+			font-size: 34upx;
+			color: #000;
+			font-weight: bold;
+		}
+
+		.price {
+			font-style: normal;
+			display: inline-block;
+			color: #e03d3e;
+			font-size: 38upx;
+		}
+
+		.addcarbtn {
+			font-size: 30upx;
+			color: #fff;
+			border-radius: 16upx;
+			width: 100%;
+			height: 100upx;
+			display: block;
+			text-align: center;
+			line-height: 100upx;
+			margin-top: 20upx;
+			background-image: linear-gradient(#fb9449, #fc753c);
+		}
+
+		.state {
+			color: #FF9518;
+			font-size: 22upx;
+			margin-left: 10upx;
+
+		}
+
+		.tag {
+			color: #fff;
+			// background: #e60012;
+			// line-height: 25upx;
+			width: 55upx;
+			// height: 25upx;
+			display: inline-block;
+			padding: 0 10upx;
+			border-radius: 5upx;
+			font-size: 16upx;
+			margin-right: 10upx;
+			image{
+				width: 100%;
+			}
+		}
+
+		.mailname {
+			color: #7E7E7E;
+			font-size: 22upx;
+			margin-left: 10upx;
+		}
+
+		.goodstag {
+			background: #f2f3f7;
+			margin-top: 30upx;
+
+			padding: 5upx 20upx;
+
+			&>view {
+				width: 30%;
+				padding: 10upx 0;
+
+				&:nth-child(3n+2) {
+					width: 40%;
+				}
+			}
+		}
+
+		.goodsinfo {
+			font-size: 20upx;
+
+			.title {
+				color: #000;
+				font-size: 28upx;
+			}
+
+			p {
+				margin: 20upx 0;
+			}
+
+		}
+	}
