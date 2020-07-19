@@ -28,8 +28,6 @@ export default {
 				e.windowHeight / 750;
 			}
 		});
-		//this.getCode();
-		this.getUserinfo();
 	},
 
 	onShow: function() {
@@ -38,9 +36,7 @@ export default {
 	onHide: function() {
 		console.log('App Hide');
 	},
-	methods: {
-		
-	}
+	methods: {}
 };
 </script>
 
@@ -197,15 +193,20 @@ button::after {
 .submitBtn,
 .cancelBtn,
 .defaultBtn {
+	width: 690upx;
+	height: 100upx;
+	background: #19a967;
+	
+	border-radius: 12upx;
 	color: #fff;
 	text-align: center;
-	border-radius: 14upx;
-	background-image: linear-gradient(#fb9549, #fc733b);
+	font-size: 36upx;
 	line-height: 100upx;
-	font-size: 32upx;
-	display: block;
+	margin: 30upx auto;
 }
-
+.submitBtn{
+	box-shadow: 0 9upx 27upx 0 rgba(25, 169, 103, 0.58);
+}
 .cancelBtn {
 	background: #f0f0f0;
 	color: #fc743c;

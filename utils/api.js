@@ -1,4 +1,4 @@
-import $http from '@/config/requestConfig'
+import $http from './request'
 import {
 	basePath
 } from '@/utils/index.js'
@@ -14,7 +14,7 @@ function JsontoForm(params) {
 export const api = {
 	getOpenid: '/api/member/session_key/', //获取openid
 	login: '/api/member/login',
-	wxlogin: '/api/member/login/3',//H5 登录
+	wxlogin: '/api/member/login/3', //H5 登录
 	getcode: '/api/sms/', //获取验证码
 	decrypt: '/api/member/decrypt', //获取手机号码
 	getUserinfo: '/api/member/userinfo', //获取用户信息
@@ -71,9 +71,9 @@ export const api = {
 	getArticleDetail: '/api/system/article/', //获取文章详情
 	getOneArticle: '/api/system/article', //获取单个文章
 	getkf: '/api/system/kf', //获取客服
-	businesstime:'/api/system/business',//营业时间查询
-	getJsSign:'/api/weixin/share',
-	getOpenidbyCode:'/api/weixin/userinfo/'
+	businesstime: '/api/system/business', //营业时间查询
+	getJsSign: '/api/weixin/share',
+	getOpenidbyCode: '/api/weixin/userinfo/'
 }
 export const shopapi = {
 	applySupplier: '/api/supplier/apply', //post申请入驻或者get申请入驻状态获取
@@ -100,7 +100,7 @@ export const shopapi = {
 	cashoutlist: '/api/supplier/tixian/', //提现明细
 	applyProductSales: '/api/supplier/product/product_sales/', //申请特价
 	cancelapply: '/api/supplier/product/product_sales_close/',
-	supplierlogin:'/api/member/login/4',//商家登录
+	supplierlogin: '/api/member/login/4', //商家登录
 }
 export function getajax(url, params) {
 	return $http.get(url, {
@@ -109,5 +109,6 @@ export function getajax(url, params) {
 }
 export function postajax(url, params) {
 	// let myparams = JsontoForm(params);
-	return $http.post(url, params)
+	 return $http.post(url, params)
+
 }

@@ -6,6 +6,11 @@
 				"navigationBarTitleText": "登录"
 			}
 		}, {
+			"path": "pages/apply/apply",
+			"style": {
+				"navigationBarTitleText": "申请"
+			}
+		}, {
 			"path": "pages/splash/splash",
 			"style": {
 				"navigationStyle": "custom"
@@ -15,12 +20,54 @@
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
+		}, {
+			"path": "pages/addgoods/addgoods",
+			"style": {
+				"navigationBarTitleText": "添加产品"
+			}
+		}, {
+			"path": "pages/goodslist/goodslist",
+			"style": {
+				"navigationBarTitleText": "产品管理"
+			}
+		}, {
+			"path": "pages/selectCate/selectCate",
+			"style": {
+				"navigationBarTitleText": "选择分类"
+			}
+		},
+		{
+			"path": "pages/mailcenter/mailcenter",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "花比三家--商家版",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#6b6b6b",
+		"selectedColor": "#000",
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/goodslist/goodslist",
+				"iconPath": "static/shop/tabbar/management_default@2x.png",
+				"selectedIconPath": "static/shop/tabbar/management_selected@2x.png",
+				"text": "首页"
+			},
+			
+			{
+				"pagePath": "pages/mailcenter/mailcenter",
+				"iconPath": "static/shop/tabbar/business_default@2x.png",
+				"selectedIconPath": "static/shop/tabbar/business_selected@2x.png",
+				"text": "商家中心"
+			}
+		]
 	}
 }

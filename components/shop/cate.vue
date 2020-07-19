@@ -72,7 +72,7 @@
 			},
 			edit() {
 				uni.navigateTo({
-					url: '/shop/addgoods/addgoods?goodsid=' + this.info.id
+					url: '/pages/addgoods/addgoods?goodsid=' + this.info.id
 				})
 			},
 			del() {
@@ -123,7 +123,7 @@
 				});
 			},
 			editprice(state,info){
-				this.$emit('editprice',{state,info})
+				this.$emit('editprice',state,info)
 			}
 		}
 	}

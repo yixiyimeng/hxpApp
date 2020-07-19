@@ -118,7 +118,7 @@ $http.dataFactory = async function(res) {
 			return Promise.resolve(httpData);
 		} else if (httpData.code == 4004) {
 			uni.navigateTo({
-				url: "/pages/user/login"
+				url: "/pages/login/login"
 			});
 			// 返回错误的结果(catch接受数据)
 			return Promise.reject({

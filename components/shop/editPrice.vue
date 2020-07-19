@@ -32,6 +32,7 @@
 		
 		methods: {
 			show(state,info){
+				console.log(info)
 				this.info=info;
 				this.state=state;
 				this.num = this.state == 0 ? this.info.stock : this.info.price;

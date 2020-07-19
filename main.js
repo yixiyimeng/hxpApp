@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import App from './App'
-
+import store from './store'
 Vue.config.productionTip = false
 import {
 	postajax,api,getajax,shopapi
 } from "./utils/api"
-import $http from '@/config/requestConfig'
-Vue.prototype.$http = $http;
 Vue.prototype.$postajax = postajax;
+Vue.prototype.$getajax = getajax;
 Vue.prototype.$api = api;
 Vue.prototype.$shopapi = shopapi;
+// 注册全局组件
+import MescrollBody from "@/components/mescroll-uni/mescroll-body.vue"
+import MescrollUni from "@/components/mescroll-uni/mescroll-uni.vue"
+Vue.component('mescroll-body', MescrollBody)
+Vue.component('mescroll-uni', MescrollUni)
+Vue.prototype.$store = store
 App.mpType = 'app'
 
 const app = new Vue({

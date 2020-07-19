@@ -35,7 +35,7 @@
 			},
 			addgoods(id,catename) {
 				uni.navigateTo({
-					url: '/shop/addgoods/addgoods?id=' + id+'&catename='+catename
+					url: '/pages/addgoods/addgoods?id=' + id+'&catename='+catename
 				})
 			}
 		}
