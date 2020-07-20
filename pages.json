@@ -6,14 +6,19 @@
 				"navigationBarTitleText": "登录"
 			}
 		}, {
-			"path": "pages/apply/apply",
+			"path": "pages/goodslist/goodslist",
 			"style": {
-				"navigationBarTitleText": "申请"
+				"navigationBarTitleText": "产品管理"
 			}
 		}, {
 			"path": "pages/splash/splash",
 			"style": {
 				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/apply/apply",
+			"style": {
+				"navigationBarTitleText": "申请"
 			}
 		}, {
 			"path": "pages/index/index",
@@ -26,11 +31,6 @@
 				"navigationBarTitleText": "添加产品"
 			}
 		}, {
-			"path": "pages/goodslist/goodslist",
-			"style": {
-				"navigationBarTitleText": "产品管理"
-			}
-		}, {
 			"path": "pages/selectCate/selectCate",
 			"style": {
 				"navigationBarTitleText": "选择分类"
@@ -41,8 +41,72 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		}, {
+			"path": "pages/wallet/wallet",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/calclist/calclist",
+			"style": {
+				"navigationBarTitleText": "结算记录"
+			}
+		}, {
+			"path": "pages/trade/trade",
+			"style": {
+				"navigationBarTitleText": "交易记录"
+			}
+		}, {
+			"path": "pages/customer/customer",
+			"style": {
+				"navigationBarTitleText": "售后订单"
+			}
+		}, {
+			"path": "pages/evaluate/evaluate",
+			"style": {
+				"navigationBarTitleText": "我的评价"
+			}
+		}, {
+			"path": "pages/feedback/feedback",
+			"style": {
+				"navigationBarTitleText": "反馈结果"
+			}
+		}, {
+			"path": "pages/applycashout/applycashout",
+			"style": {
+				"navigationBarTitleText": "申请提现"
+			}
+		}, {
+			"path": "pages/cashoutlist/cashoutlist",
+			"style": {
+				"navigationBarTitleText": "提现记录"
+			}
+		}, {
+			"path": "pages/mailinfo/mailinfo",
+			"style": {
+				"navigationBarTitleText": "店铺信息"
+			}
+		}, {
+			"path": "pages/orderlist/orderlist",
+			"style": {
+				"navigationBarTitleText": "订单"
+			}
+		}, {
+			"path": "pages/orderdetails/orderdetails",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		}, {
+			"path": "pages/countorder/countorder",
+			"style": {
+				"navigationBarTitleText": "订单汇总"
+			}
+		}, {
+			"path": "pages/checkPwd/checkPwd",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
 		}
-
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -61,7 +125,17 @@
 				"selectedIconPath": "static/shop/tabbar/management_selected@2x.png",
 				"text": "首页"
 			},
-			
+			{
+				"pagePath": "pages/orderlist/orderlist",
+				"iconPath": "static/shop/tabbar/order_default@2x.png",
+				"selectedIconPath": "static/shop/tabbar/order_selected@2x.png",
+				"text": "订单"
+			}, {
+				"pagePath": "pages/countorder/countorder",
+				"iconPath": "static/shop/tabbar/summary_default@2x.png",
+				"selectedIconPath": "static/shop/tabbar/summary_selected@2x.png",
+				"text": "订单汇总"
+			},
 			{
 				"pagePath": "pages/mailcenter/mailcenter",
 				"iconPath": "static/shop/tabbar/business_default@2x.png",

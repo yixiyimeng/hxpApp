@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "产品管理",
+  "usingComponents": {
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "cate": "/components/shop/cate",
+    "applymodal": "/components/shop/applymodal",
+    "edit-price": "/components/shop/editPrice"
+  }
+}

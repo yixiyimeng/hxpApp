@@ -1,9 +1,6 @@
 <template>
 	<view>
 		<view class="top-warp">
-			<cu-custom :isBack="true">
-				<block slot="content">产品管理</block>
-			</cu-custom>
 			<div class="topbar flex align-center">
 				<div class="flex-sub">
 					<scroll-view scroll-x class="bg-white nav scrollview ">
@@ -18,12 +15,13 @@
 				</navigator>
 			</div>
 		</view>
-		<mescroll-body top="100" :isSafearea='true' :down="downOption" @down="downCallback" :up="upOption"
-		 @up="upCallback" @init="mescrollInit" :fixed="false">
-			<cate v-for="(item, index) in productlist" :key="index" :info="item" @upload="upload" @applyPrice="applyPrice" @editprice="editprice"></cate>
+		<mescroll-body top="100" :isSafearea='true' :down="downOption" @down="downCallback" :up="upOption" @up="upCallback"
+		 @init="mescrollInit" :fixed="false">
+			<cate v-for="(item, index) in productlist" :key="index" :info="item" @upload="upload" @applyPrice="applyPrice"
+			 @editprice="editprice"></cate>
 		</mescroll-body>
 		<applymodal ref='applymodal' @upload="upload"></applymodal>
-		<editPrice ref="editPrice"  @upload="upload"></editPrice>
+		<editPrice ref="editPrice" @upload="upload"></editPrice>
 	</view>
 </template>
 
@@ -48,21 +46,21 @@
 						num: 0,
 						size: 10
 					},
-					
+
 				},
 				mescroll: null, //mescroll实例对象
 				class_id: '',
 				productlist: [],
-				CustomBar:this.CustomBar||60,
-				StatusBar:this.StatusBar||20
+				CustomBar: this.CustomBar || 60,
+				StatusBar: this.StatusBar || 20
 			};
 		},
 		components: {
-		cate,
+			cate,
 			applymodal,
 			editPrice
 		},
-		
+
 		created() {
 			this.getCate();
 		},
@@ -111,11 +109,11 @@
 				this.mescroll.resetUpScroll();
 			},
 			applyPrice(id) {
-				console.log('id',id)
+				console.log('id', id)
 				this.$refs.applymodal.show(id)
 			},
-			editprice(index,info){
-				this.$refs.editPrice.show(index,info)
+			editprice(index, info) {
+				this.$refs.editPrice.show(index, info)
 			}
 
 		}
@@ -132,6 +130,7 @@
 		width: 100%;
 		background-color: white;
 	}
+
 	// .pageview {
 	// 	height: 100vh;
 	// 	overflow: hidden;

@@ -15,6 +15,7 @@ const store = new Vuex.Store({
 		keyword: '',
 		supplierInfo: {},
 		invited: uni.getStorageSync('invited') || '',
+		navIndex:0
 	},
 	mutations: {
 		login(state, payload) {
@@ -57,6 +58,10 @@ const store = new Vuex.Store({
 				}
 			}
 			uni.clearStorageSync('')
+		},
+		SET_NAVINDEX(state, navIndex) {
+			uni.setStorageSync('navIndex', navIndex);
+			state.navIndex = navIndex;
 		}
 	}
 })

@@ -1,9 +1,13 @@
 <template>
 	<view class="pageview flex flex-direction">
 		<image src="/static/shop/bg@2x.png" mode="widthFix" class="bg"></image>
-		<cu-custom :bgColor="bgColor"><block slot="content">商家中心</block></cu-custom>
+		<cu-custom :bgColor="bgColor">
+			<block slot="content">商家中心</block>
+		</cu-custom>
 		<div class="mailInfo flex">
-			<div class="imgbox"><image :src="info.supplier_img"></image></div>
+			<div class="imgbox">
+				<image :src="info.supplier_img"></image>
+			</div>
 			<div class="info flex-sub">
 				<div class="name">{{ info.supplier_name }}</div>
 				<p>类别：{{ info.supplier_group_id }}</p>
@@ -124,239 +128,249 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
-import cuCustom from '@/colorui/components/cu-custom.vue';
-import MescrollMixin from '@/components/mescroll-uni/mescroll-mixins.js';
-export default {
-	data() {
-		return {
-			bgColor: 'nobg',
-			switchA: false,
-			menulist: [
-				{
-					url: '/pages/wallet/wallet',
-					name: '我的钱包'
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex';
+	import MescrollMixin from '@/components/mescroll-uni/mescroll-mixins.js';
+	export default {
+		data() {
+			return {
+				bgColor: 'nobg',
+				switchA: false,
+				menulist: [{
+						url: '/pages/wallet/wallet',
+						name: '我的钱包'
+					},
+					{
+						url: '/pages/calclist/calclist',
+						name: '结算记录'
+					},
+					{
+						url: '/pages/trade/trade',
+						name: '交易查询'
+					},
+					{
+						url: '/pages/customer/customer',
+						name: '售后订单'
+					},
+					{
+						url: '/pages/evaluate/evaluate',
+						name: '我的评价'
+					}, {
+						url: '/pages/checkPwd/checkPwd',
+						name: '修改密码'
+					}
+				],
+				info: {
+					shop: {},
+					today: {},
+					order: {
+						daipeisong: 0
+					}
 				},
-				{
-					url: '/pages/calclist/calclist',
-					name: '结算记录'
-				},
-				{
-					url: '/pages/trade/trade',
-					name: '交易查询'
-				},
-				{
-					url: '/pages/customer/customer',
-					name: '售后订单'
-				},
-				{
-					url: '/pages/evaluate/evaluate',
-					name: '我的评价'
+				upOption: {
+					empty: {
+						use: false
+					}
 				}
-			],
-			info: { shop: {}, today: {}, order: { daipeisong: 0 } },
-			upOption: {
-				empty: {
-					use: false
-				}
-			}
-		};
-	},
-	mixins: [MescrollMixin],
-	components: {
-		cuCustom
-	},
-	methods: {
-		...mapMutations(['uploadSupplierInfo']),
-		downCallback() {
-			this.getSupplierInfo();
-		},
-		SwitchA(e) {
-			this.info.supplier_status = e.detail.value ? 1 : 0;
-			this.supplierStatus();
-		},
-		getSupplierInfo() {
-			this.$postajax(this.$shopapi.getSupplierInfo).then(da => {
-				if (da.code == 0) {
-					this.info = da.data;
-					console.log('ahaah',this.info)
-					this.uploadSupplierInfo(this.info);
-				}
-				this.mescroll.endSuccess(0, false);
-			});
-		},
-		supplierStatus() {
-			this.$postajax(this.$shopapi.supplierStatus).then(da => {
-				if (da.code == 0) {
-				}
-			});
-		},
-		supplierinfo() {
-			/* 编辑用户信息 */
-			let param = {
-				supplier_group_id: this.info.supplier_group_id,
-				supplier_img: this.info.supplier_img,
-				supplier_name: this.info.supplier_name,
-				supplier_user_name: this.info.supplier_user_name,
-				supplier_user_phone: this.info.supplier_user_phone
 			};
-			uni.navigateTo({
-				url: '/pages/mailinfo/mailinfo?info=' + JSON.stringify(param)
-			});
 		},
-		gotoOrder(type) {
-			this.$emit('showOrderlist', type);
+		mixins: [MescrollMixin],
+		methods: {
+			...mapMutations(['uploadSupplierInfo', 'SET_NAVINDEX']),
+			downCallback() {
+				this.getSupplierInfo();
+			},
+			SwitchA(e) {
+				this.info.supplier_status = e.detail.value ? 1 : 0;
+				this.supplierStatus();
+			},
+			getSupplierInfo() {
+				this.$postajax(this.$shopapi.getSupplierInfo).then(da => {
+					if (da.code == 0) {
+						this.info = da.data;
+						console.log('ahaah', this.info)
+						this.uploadSupplierInfo(this.info);
+					}
+					this.mescroll.endSuccess(0, false);
+				});
+			},
+			supplierStatus() {
+				this.$postajax(this.$shopapi.supplierStatus).then(da => {
+					if (da.code == 0) {}
+				});
+			},
+			supplierinfo() {
+				/* 编辑用户信息 */
+				let param = {
+					supplier_group_id: this.info.supplier_group_id,
+					supplier_img: this.info.supplier_img,
+					supplier_name: this.info.supplier_name,
+					supplier_user_name: this.info.supplier_user_name,
+					supplier_user_phone: this.info.supplier_user_phone
+				};
+				uni.navigateTo({
+					url: '/pages/mailinfo/mailinfo?info=' + JSON.stringify(param)
+				});
+			},
+			gotoOrder(type) {
+				this.SET_NAVINDEX(type)
+				uni.switchTab({
+					url: '/pages/orderlist/orderlist'
+				})
+				// this.$emit('showOrderlist', type);
+			}
 		}
-	}
-};
+	};
 </script>
 
 <style lang="scss">
-.pageview {
-	height: 100vh;
-	overflow: hidden;
-	position: relative;
-}
-
-.pageview .main {
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-}
-
-.bg {
-	width: 100%;
-	position: absolute !important;
-	top: 0;
-	left: 0;
-	z-index: 0;
-}
-
-.mailInfo {
-	color: #717171;
-	font-size: 26upx;
-	padding: 24upx;
-	margin: 35upx 30upx 0;
-	background: #fff;
-	box-shadow: 0px 2upx 6upx 0px rgba(26, 170, 104, 0.27);
-	border-radius: 12upx;
-	z-index: 1;
-	position: relative;
-
-	.imgbox {
-		width: 140upx;
-		height: 140upx;
-		border-radius: 100%;
+	.pageview {
+		height: 100vh;
 		overflow: hidden;
-		border: 1px solid #19a967;
-		margin-right: 25upx;
-
-		image {
-			width: 102%;
-			height: 102%;
-		}
+		position: relative;
 	}
 
-	.name {
-		color: #323232;
-		font-size: 34upx;
-		margin-bottom: 23upx;
+	.pageview .main {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 
-	p + p {
-		margin-top: 15upx;
-	}
-
-	.edit {
-		position: absolute;
-		color: #bcbcbc;
-		top: 35upx;
-		right: 20upx;
-
-		image {
-			width: 34upx;
-			vertical-align: middle;
-		}
-
-		text {
-			vertical-align: middle;
-			margin-right: 5upx;
-		}
-	}
-
-	.state {
-		position: absolute;
-		right: 24upx;
-		bottom: 20upx;
-
-		text {
-			margin-right: 17upx;
-		}
-
-		.green {
-			color: #19a967;
-		}
-	}
-}
-
-.title-bar {
-	color: #19a967;
-	font-size: 32upx;
-	position: relative;
-	padding: 30upx;
-
-	&:before {
-		background: #19a967;
-		width: 10upx;
-		height: 40upx;
-		border-radius: 5upx;
-		display: block;
-		content: '';
-		position: absolute;
+	.bg {
+		width: 100%;
+		position: absolute !important;
+		top: 0;
 		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
+		z-index: 0;
 	}
 
-	&:after {
-		content: '';
-		display: block;
-		height: 1px;
-		position: absolute;
-		left: 30upx;
-		bottom: 0;
-		background: #eee;
-		transform: scaleY(0.5);
-		right: 0;
-	}
-
-	.more {
-		color: #545454;
+	.mailInfo {
+		color: #717171;
 		font-size: 26upx;
-	}
-}
-
-.cu-list.grid {
-	.menu-item {
-		color: #a2a2a2;
-		font-size: 24upx;
-		padding: 30upx 0;
+		padding: 24upx;
+		margin: 35upx 30upx 0;
+		background: #fff;
+		box-shadow: 0px 2upx 6upx 0px rgba(26, 170, 104, 0.27);
+		border-radius: 12upx;
+		z-index: 1;
 		position: relative;
 
-		.num {
-			color: #2e302f;
-			font-size: 44upx;
-			margin-bottom: 10upx;
-		}
-
 		.imgbox {
-			position: relative;
-			width: 48upx;
-			margin: 0 auto 10upx;
+			width: 140upx;
+			height: 140upx;
+			border-radius: 100%;
+			overflow: hidden;
+			border: 1px solid #19a967;
+			margin-right: 25upx;
+
+			image {
+				width: 102%;
+				height: 102%;
+			}
 		}
 
-		image {
-			width: 48upx;
+		.name {
+			color: #323232;
+			font-size: 34upx;
+			margin-bottom: 23upx;
+		}
+
+		p+p {
+			margin-top: 15upx;
+		}
+
+		.edit {
+			position: absolute;
+			color: #bcbcbc;
+			top: 35upx;
+			right: 20upx;
+
+			image {
+				width: 34upx;
+				vertical-align: middle;
+			}
+
+			text {
+				vertical-align: middle;
+				margin-right: 5upx;
+			}
+		}
+
+		.state {
+			position: absolute;
+			right: 24upx;
+			bottom: 20upx;
+
+			text {
+				margin-right: 17upx;
+			}
+
+			.green {
+				color: #19a967;
+			}
 		}
 	}
-}
+
+	.title-bar {
+		color: #19a967;
+		font-size: 32upx;
+		position: relative;
+		padding: 30upx;
+
+		&:before {
+			background: #19a967;
+			width: 10upx;
+			height: 40upx;
+			border-radius: 5upx;
+			display: block;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			height: 1px;
+			position: absolute;
+			left: 30upx;
+			bottom: 0;
+			background: #eee;
+			transform: scaleY(0.5);
+			right: 0;
+		}
+
+		.more {
+			color: #545454;
+			font-size: 26upx;
+		}
+	}
+
+	.cu-list.grid {
+		.menu-item {
+			color: #a2a2a2;
+			font-size: 24upx;
+			padding: 30upx 0;
+			position: relative;
+
+			.num {
+				color: #2e302f;
+				font-size: 44upx;
+				margin-bottom: 10upx;
+			}
+
+			.imgbox {
+				position: relative;
+				width: 48upx;
+				margin: 0 auto 10upx;
+			}
+
+			image {
+				width: 48upx;
+			}
+		}
+	}
 </style>

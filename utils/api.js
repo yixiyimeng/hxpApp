@@ -97,10 +97,11 @@ export const shopapi = {
 	gettradelist: '/api/supplier/jiaoyi', //交易记录查询
 	myWallet: '/api/supplier/qianbao', //我的钱包
 	cashout: '/api/supplier/tixian', //商家提现申请
-	cashoutlist: '/api/supplier/tixian/', //提现明细
+	cashoutlist: '/api/supplier/tixian', //提现明细
 	applyProductSales: '/api/supplier/product/product_sales/', //申请特价
 	cancelapply: '/api/supplier/product/product_sales_close/',
 	supplierlogin: '/api/member/login/4', //商家登录
+	checkPwd: '/api/supplier/update_password', //修改面膜
 }
 export function getajax(url, params) {
 	return $http.get(url, {
@@ -109,6 +110,6 @@ export function getajax(url, params) {
 }
 export function postajax(url, params) {
 	// let myparams = JsontoForm(params);
-	 return $http.post(url, params)
+	return $http.post(url, params)
 
 }

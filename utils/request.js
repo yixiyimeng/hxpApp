@@ -37,7 +37,6 @@ axios.defaults.adapter = function(config) {
 
 request.interceptors.request.use((request) => {
 	request.headers['Content-Type'] = 'application/json'
-	console.log(request)
 	if (request.data && request.data.noloading) {
 		let newparam = {};
 		for (var key in request.data) {
@@ -52,6 +51,7 @@ request.interceptors.request.use((request) => {
 			title: '拼命加载中...'
 		})
 	}
+	console.log(request)
 	return request
 })
 

@@ -25,20 +25,7 @@
 						<span>{{item.price}}</span>
 						<span>{{item.amount}}</span>
 					</view>
-					<!-- <view class="table-td flex">
-						<span>红玫瑰</span>
-						<span class="flex-sub">A级；20支/扎；中熟A级；20</span>
-						<span>5</span>
-						<span>5</span>
-						<span>25</span>
-					</view>
-					<view class="table-td flex">
-						<span>红玫瑰</span>
-						<span class="flex-sub">A级；20支/扎；中熟</span>
-						<span>5</span>
-						<span>5</span>
-						<span>25</span>
-					</view> -->
+					
 				</view>
 			</view>
 		</view>
@@ -76,7 +63,7 @@
 		methods: {
 			showdetails() {
 				uni.navigateTo({
-					url: '/shop/orderdetails/orderdetails?id=' + this.info.id
+					url: '/pages/orderdetails/orderdetails?id=' + this.info.id
 				})
 			},
 			sendOrder(type) {

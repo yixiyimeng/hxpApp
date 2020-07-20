@@ -1,28 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-  <head>
-    <meta charset="UTF-8" />
-    <script>
-      var __UniViewStartTime__ = Date.now();
-      document.addEventListener('DOMContentLoaded', function() {
-          document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
-      })
-      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
-        CSS.supports('top: constant(a)'))
-      document.write(
-        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
-        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
-    </script>
-    <title>View</title>
-    <link rel="stylesheet" href="view.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
 
-  <body>
-    <div id="app"></div>
-    <script src="__uniappes6.js"></script>
-    <script src="view.umd.min.js"></script>
-    <script src="app-view.js"></script>
-  </body>
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"hxpApp","entryPagePath":"pages/login/login.html","page":{"pages/login/login.html":{"window":{"navigationBarTitleText":"登录","usingComponents":{}}},"pages/goodslist/goodslist.html":{"window":{"navigationBarTitleText":"产品管理","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body","cate":"/components/shop/cate","applymodal":"/components/shop/applymodal","edit-price":"/components/shop/editPrice"}}},"pages/splash/splash.html":{"window":{"navigationStyle":"custom","usingComponents":{}}},"pages/apply/apply.html":{"window":{"navigationBarTitleText":"申请","usingComponents":{}}},"pages/index/index.html":{"window":{"navigationBarTitleText":"首页","usingComponents":{}}},"pages/addgoods/addgoods.html":{"window":{"navigationBarTitleText":"添加产品","usingComponents":{"avatar":"/components/yq-avatar/yq-avatar"}}},"pages/selectCate/selectCate.html":{"window":{"navigationBarTitleText":"选择分类","usingComponents":{"selectcate":"/components/shop/selectcate"}}},"pages/mailcenter/mailcenter.html":{"window":{"navigationStyle":"custom","usingComponents":{}}},"pages/wallet/wallet.html":{"window":{"navigationStyle":"custom","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body","cu-custom":"/colorui/components/cu-custom"}}},"pages/calclist/calclist.html":{"window":{"navigationBarTitleText":"结算记录","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body","tui-datetime":"/components/dateTime/dateTime"}}},"pages/trade/trade.html":{"window":{"navigationBarTitleText":"交易记录","usingComponents":{"tui-datetime":"/components/dateTime/dateTime"}}},"pages/customer/customer.html":{"window":{"navigationBarTitleText":"售后订单","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body"}}},"pages/evaluate/evaluate.html":{"window":{"navigationBarTitleText":"我的评价","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body","evaluate-item":"/components/shop/evaluateItem"}}},"pages/feedback/feedback.html":{"window":{"navigationBarTitleText":"反馈结果","usingComponents":{}}},"pages/applycashout/applycashout.html":{"window":{"navigationBarTitleText":"申请提现","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body"}}},"pages/cashoutlist/cashoutlist.html":{"window":{"navigationBarTitleText":"提现记录","usingComponents":{"mescroll-uni":"/components/mescroll-uni/mescroll-uni"}}},"pages/mailinfo/mailinfo.html":{"window":{"navigationBarTitleText":"店铺信息","usingComponents":{}}},"pages/orderlist/orderlist.html":{"window":{"navigationBarTitleText":"订单","usingComponents":{"order-item":"/components/shop/order-item"}}},"pages/orderdetails/orderdetails.html":{"window":{"navigationBarTitleText":"订单详情","usingComponents":{}}},"pages/countorder/countorder.html":{"window":{"navigationBarTitleText":"订单汇总","usingComponents":{}}},"pages/checkPwd/checkPwd.html":{"window":{"navigationBarTitleText":"修改密码","usingComponents":{}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"花比三家--商家版","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"#6b6b6b","selectedColor":"#000","backgroundColor":"#fff","borderStyle":"black","list":[{"pagePath":"pages/goodslist/goodslist.html","iconPath":"static/shop/tabbar/management_default@2x.png","selectedIconPath":"static/shop/tabbar/management_selected@2x.png","text":"首页"},{"pagePath":"pages/orderlist/orderlist.html","iconPath":"static/shop/tabbar/order_default@2x.png","selectedIconPath":"static/shop/tabbar/order_selected@2x.png","text":"订单"},{"pagePath":"pages/countorder/countorder.html","iconPath":"static/shop/tabbar/summary_default@2x.png","selectedIconPath":"static/shop/tabbar/summary_selected@2x.png","text":"订单汇总"},{"pagePath":"pages/mailcenter/mailcenter.html","iconPath":"static/shop/tabbar/business_default@2x.png","selectedIconPath":"static/shop/tabbar/business_selected@2x.png","text":"商家中心"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/login/login","pages/goodslist/goodslist","pages/splash/splash","pages/apply/apply","pages/index/index","pages/addgoods/addgoods","pages/selectCate/selectCate","pages/mailcenter/mailcenter","pages/wallet/wallet","pages/calclist/calclist","pages/trade/trade","pages/customer/customer","pages/evaluate/evaluate","pages/feedback/feedback","pages/applycashout/applycashout","pages/cashoutlist/cashoutlist","pages/mailinfo/mailinfo","pages/orderlist/orderlist","pages/orderdetails/orderdetails","pages/countorder/countorder","pages/checkPwd/checkPwd"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.2.2","usingComponents":{"mescroll-body":"/components/mescroll-uni/mescroll-body","mescroll-uni":"/components/mescroll-uni/mescroll-uni","cu-custom":"/colorui/components/cu-custom"}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
 
 </html>
