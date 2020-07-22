@@ -101,7 +101,8 @@ export const shopapi = {
 	applyProductSales: '/api/supplier/product/product_sales/', //申请特价
 	cancelapply: '/api/supplier/product/product_sales_close/',
 	supplierlogin: '/api/member/login/4', //商家登录
-	checkPwd: '/api/supplier/update_password', //修改面膜
+	checkPwd: '/api/supplier/update_password', //修改密码
+	
 }
 export function getajax(url, params) {
 	return $http.get(url, {

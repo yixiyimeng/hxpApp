@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加产品",
+  "usingComponents": {
+    "avatar": "/components/yq-avatar/yq-avatar"
+  }
+}

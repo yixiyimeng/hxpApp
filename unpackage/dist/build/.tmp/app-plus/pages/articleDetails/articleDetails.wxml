@@ -1,0 +1,1 @@
+<view><view class="title flex justify-between align-center"><view class="action text-orange">{{articleDetail.name}}</view><view>{{"浏览量："+articleDetail.read}}</view></view><view class="richText"><rich-text nodes="{{articleDetail.info}}"></rich-text></view></view>

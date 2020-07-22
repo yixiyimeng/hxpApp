@@ -11,7 +11,7 @@
 			</view>
 			<view class="margin-top-lg" :class="[isAble ? 'submitBtn' : 'defaultBtn']" @tap="submitLogin">登录</view>
 			<view class="text-right margin-top-lg">
-				<navigator url="../apply/apply" class="reg" hover-class="none">去注册&gt;</navigator>
+				<navigator url="../articleDetails/articleDetails?id=21" class="reg" hover-class="none">去注册&gt;</navigator>
 			</view>
 		</view>
 	</view>

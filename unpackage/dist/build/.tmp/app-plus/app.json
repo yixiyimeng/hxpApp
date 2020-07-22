@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/goodslist/goodslist",
+    "pages/splash/splash",
+    "pages/apply/apply",
+    "pages/index/index",
+    "pages/addgoods/addgoods",
+    "pages/selectCate/selectCate",
+    "pages/mailcenter/mailcenter",
+    "pages/wallet/wallet",
+    "pages/calclist/calclist",
+    "pages/trade/trade",
+    "pages/customer/customer",
+    "pages/evaluate/evaluate",
+    "pages/feedback/feedback",
+    "pages/applycashout/applycashout",
+    "pages/cashoutlist/cashoutlist",
+    "pages/mailinfo/mailinfo",
+    "pages/orderlist/orderlist",
+    "pages/orderdetails/orderdetails",
+    "pages/countorder/countorder",
+    "pages/checkPwd/checkPwd",
+    "pages/articleDetails/articleDetails"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "花比三家--商家版",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#6b6b6b",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/goodslist/goodslist",
+        "iconPath": "static/shop/tabbar/management_default@2x.png",
+        "selectedIconPath": "static/shop/tabbar/management_selected@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/orderlist/orderlist",
+        "iconPath": "static/shop/tabbar/order_default@2x.png",
+        "selectedIconPath": "static/shop/tabbar/order_selected@2x.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/countorder/countorder",
+        "iconPath": "static/shop/tabbar/summary_default@2x.png",
+        "selectedIconPath": "static/shop/tabbar/summary_selected@2x.png",
+        "text": "订单汇总"
+      },
+      {
+        "pagePath": "pages/mailcenter/mailcenter",
+        "iconPath": "static/shop/tabbar/business_default@2x.png",
+        "selectedIconPath": "static/shop/tabbar/business_selected@2x.png",
+        "text": "商家中心"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "hxpShopApp",
+  "compilerVersion": "2.2.2",
+  "usingComponents": {
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}
