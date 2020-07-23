@@ -64,6 +64,7 @@
       border-radius: 8rpx;
       width: 160rpx;
       line-height: 56rpx;
+      height: 56rpx;
       text-align: center;
 }
 .card .card-ft .btn.cancelBtn {

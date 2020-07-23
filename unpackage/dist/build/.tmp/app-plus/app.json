@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mailcenter/mailcenter",
     "pages/login/login",
     "pages/goodslist/goodslist",
     "pages/splash/splash",
@@ -7,7 +8,6 @@
     "pages/index/index",
     "pages/addgoods/addgoods",
     "pages/selectCate/selectCate",
-    "pages/mailcenter/mailcenter",
     "pages/wallet/wallet",
     "pages/calclist/calclist",
     "pages/trade/trade",
@@ -67,7 +67,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "hxpShopApp",
+  "appname": "花比三家农户版",
   "compilerVersion": "2.2.2",
   "usingComponents": {
     "mescroll-body": "/components/mescroll-uni/mescroll-body",

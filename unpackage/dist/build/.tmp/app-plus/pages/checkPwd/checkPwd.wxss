@@ -56,4 +56,8 @@ page,
   font-size: 30rpx;
   color: #19a967;
 }
+.phone {
+  font-size: 36rpx;
+  color: #333;
+}
 
