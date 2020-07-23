@@ -1,9 +1,10 @@
 <template>
 	<view class="flex flex-direction pageview">
 		<view class="group flex-sub">
-			<view class="row flex align-center">
+			<view class="phone row flex align-center">
 				<text class="cuIcon-phone icon"></text>
-				<input type="text" placeholder="请输入手机号码" class="flex-sub" @input="changeMobile" />
+				<div v-if="type==1">{{phone}}</div>
+				<input v-else type="text" placeholder="请输入手机号码" class="flex-sub" @input="changeMobile">
 			</view>
 			<view class="row flex align-center">
 				<text class="cuIcon-command icon"></text>
@@ -36,10 +37,31 @@
 				password: '',
 				tpassword: '',
 				verify: '',
-				codetxt: '获取验证码'
+				codetxt: '获取验证码',
+				type:1,
+				timer:null
 			};
 		},
-		onShow() {},
+		onLoad(option) {
+			this.type=option.type||1;
+			if(this.type==1){
+				this.phone=uni.getStorageSync('loginInfo').phone;
+			}
+			let that=this;
+			uni.setNavigationBarTitle({
+				title: that.type==1?'修改密码':'忘记密码'
+			});
+		},
+		onShow() {
+			
+		},
+		onUnload() {
+			if(this.timer){
+				clearInterval(this.timer);
+				this.timer=null;
+				num=60;
+			}
+		},
 		mounted() {},
 		computed: {
 			isAble() {
@@ -71,9 +93,10 @@
 				if (regPhone(this.phone)) {
 					/* 设置倒计时 */
 					$me.codetxt = num + 's';
-					var timer = setInterval(function() {
+					$me.timer = setInterval(function() {
 						if (num == 1) {
-							clearInterval(timer);
+							clearInterval($me.timer);
+							$me.timer=null;
 							$me.codetxt = '获取验证码';
 							num = 60;
 						} else {
@@ -164,5 +187,9 @@
 	.reg {
 		font-size: 30upx;
 		color: #19a967;
+	}
+	.phone{
+		font-size: 36upx;
+		color: #333;
 	}
 </style>

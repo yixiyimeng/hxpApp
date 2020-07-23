@@ -30,7 +30,7 @@
 			//显示操作菜单
 			show: {
 				type: Boolean,
-				default: false
+				default: true
 			},
 			//菜单按钮数组，自定义文本颜色，红色参考色：#e53a37
 			itemList: {
@@ -62,6 +62,9 @@
 				type: Boolean,
 				default: true
 			}
+		},
+		created() {
+			console.log('hahaha')
 		},
 		methods: {
 			handleClickMask() {

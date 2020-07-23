@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "结算记录",
-  "usingComponents": {
-    "mescroll-body": "/components/mescroll-uni/mescroll-body",
-    "tui-datetime": "/components/dateTime/dateTime"
-  }
-}
