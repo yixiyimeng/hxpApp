@@ -1,9 +1,9 @@
 <template>
 	<view class="flex flex-direction pageview">
 		<view class="group flex-sub">
-			<view class="row flex align-center">
+			<view class="phone row">
 				<text class="cuIcon-phone icon"></text>
-				<input type="text" placeholder="请输入手机号码" class="flex-sub" @input="changeMobile" />
+				{{phone}}
 			</view>
 			<view class="row flex align-center">
 				<text class="cuIcon-command icon"></text>
@@ -39,7 +39,10 @@
 				codetxt: '获取验证码'
 			};
 		},
-		onShow() {},
+		onShow() {
+			this.phone=uni.getStorageSync('loginInfo').phone;
+			console.log(this.phone)
+		},
 		mounted() {},
 		computed: {
 			isAble() {
@@ -164,5 +167,9 @@
 	.reg {
 		font-size: 30upx;
 		color: #19a967;
+	}
+	.phone{
+		font-size: 36upx;
+		color: #333;
 	}
 </style>

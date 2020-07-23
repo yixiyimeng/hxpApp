@@ -1,2 +1,0 @@
-setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"pageview { height: 100%; overflow: auto; }\n",],undefined,{path:"./pages/evaluate/evaluate.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/evaluate/evaluate.wxml') } }));

@@ -145,6 +145,7 @@
 				border-radius: 8upx;
 				width: 160upx;
 				line-height: 56upx;
+				height: 56upx;
 				text-align: center;
 
 				&.cancelBtn {

@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "选择分类",
-  "usingComponents": {
-    "selectcate": "/components/shop/selectcate"
-  }
-}
