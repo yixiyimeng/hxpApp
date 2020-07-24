@@ -251,7 +251,7 @@ export default {
 			this.$postajax(this.$api.loginout).then(da => {
 				if (da.code == 0) {
 					uni.clearStorageSync();
-					uni.reLaunch({
+					uni.redirectTo({
 						url: '/pages/login/login'
 					});
 				}

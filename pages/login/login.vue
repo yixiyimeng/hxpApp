@@ -12,7 +12,7 @@
 			</view>
 			<view class="margin-top-lg" :class="[isAble ? 'submitBtn' : 'defaultBtn']" @tap="submitLogin">登录</view>
 			<view class="flex justify-between margin-top-lg">
-				<navigator url="../articleDetails/articleDetails?id=21" class="reg" hover-class="none">去注册&gt;</navigator>
+				<navigator url="../articleDetails/articleDetails?id=21" class="reg" hover-class="none">申请入驻&gt;</navigator>
 				<navigator url="../checkPwd/checkPwd?type==0" class="reg" hover-class="none">忘记密码&gt;</navigator>
 				</view>
 		</view>
