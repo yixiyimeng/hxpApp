@@ -102,6 +102,7 @@ export const shopapi = {
 	cancelapply: '/api/supplier/product/product_sales_close/',
 	supplierlogin: '/api/member/login/4', //商家登录
 	checkPwd: '/api/supplier/update_password', //修改密码
+	withhold: '/api/supplier/withhold', //其他扣款
 	
 }
 export function getajax(url, params) {

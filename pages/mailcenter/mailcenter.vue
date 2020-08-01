@@ -166,6 +166,10 @@ export default {
 					name: '我的评价'
 				},
 				{
+					url: '/pages/deduction/deduction',
+					name: '其他扣款'
+				},
+				{
 					url: '/pages/checkPwd/checkPwd',
 					name: '修改密码'
 				}

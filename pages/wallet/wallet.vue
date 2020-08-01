@@ -10,6 +10,7 @@
 					<view>账户余额(元)</view>
 					<view class="price">{{wallet.now_money||0.00}}</view>
 					<navigator url="/pages/cashoutlist/cashoutlist" class="link">提现记录</navigator>
+					<navigator url="/pages/deduction/deduction" class="link">处罚记录</navigator>
 					<view class="nav flex align-center justify-center">
 						<view class="flex-sub">
 							<view>累积销售(毛收入)</view>
@@ -132,6 +133,9 @@
 			border-radius: 28upx;
 			top: 24upx;
 			right: 24upx;
+			&+.link{
+				top:90upx
+			}
 		}
 
 		.nav {

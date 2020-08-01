@@ -111,6 +111,11 @@
 			"style": {
 				"navigationBarTitleText": "注册说明"
 			}
+		}, {
+			"path": "pages/deduction/deduction",
+			"style": {
+				"navigationBarTitleText": "其他扣款"
+			}
 		}
 
 	],
